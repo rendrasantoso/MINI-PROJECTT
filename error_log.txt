@@ -1,0 +1,60 @@
+[03-Dec-2025 16:22:04 Europe/Berlin] ==========================================
+[03-Dec-2025 16:22:04 Europe/Berlin] PROSES PEMESANAN DIMULAI - 2025-12-03 16:22:04
+[03-Dec-2025 16:22:04 Europe/Berlin] ==========================================
+[03-Dec-2025 16:22:04 Europe/Berlin] Data Form:
+[03-Dec-2025 16:22:04 Europe/Berlin] - Nama: raffah
+[03-Dec-2025 16:22:04 Europe/Berlin] - No HP: 23423535543
+[03-Dec-2025 16:22:04 Europe/Berlin] - Produk Nama: 'Ganci Smekda'
+[03-Dec-2025 16:22:04 Europe/Berlin] - Product ID: 0
+[03-Dec-2025 16:22:04 Europe/Berlin] - Jumlah: 1
+[03-Dec-2025 16:22:04 Europe/Berlin] - Catatan: y
+[03-Dec-2025 16:22:04 Europe/Berlin] Koneksi database OK
+[03-Dec-2025 16:22:04 Europe/Berlin] Mencari produk...
+[03-Dec-2025 16:22:04 Europe/Berlin] Cari berdasarkan nama: 'Ganci Smekda'
+[03-Dec-2025 16:22:04 Europe/Berlin] Nama setelah trim: 'Ganci Smekda'
+[03-Dec-2025 16:22:04 Europe/Berlin] Produk ditemukan dengan query: SELECT * FROM merchandise WHERE nama_produk LIKE ? LIMIT 1
+[03-Dec-2025 16:22:04 Europe/Berlin] Cek stok: Tersedia = 10, Dipesan = 1
+[03-Dec-2025 16:22:04 Europe/Berlin] Harga satuan: Rp 10.000
+[03-Dec-2025 16:22:04 Europe/Berlin] Total harga: Rp 10.000
+[03-Dec-2025 16:22:04 Europe/Berlin] Kode pesanan: SMEKDA-20251203-70F5C3DF
+[03-Dec-2025 16:22:04 Europe/Berlin] Proses upload file...
+[03-Dec-2025 16:22:04 Europe/Berlin] Nama file: kartu_1764775324_496879a804fa51e3.jpeg
+[03-Dec-2025 16:22:04 Europe/Berlin] Path lengkap: C:\xampp\htdocs\smekda/uploads/kartu_pelajar/kartu_1764775324_496879a804fa51e3.jpeg
+[03-Dec-2025 16:22:04 Europe/Berlin] File berhasil diupload: 49926 bytes
+[03-Dec-2025 16:22:04 Europe/Berlin] Menyimpan data ke database...
+[03-Dec-2025 16:22:04 Europe/Berlin] Tabel pemesanan_merchandise dibuat
+[03-Dec-2025 16:22:04 Europe/Berlin] Pesanan disimpan. ID: 1
+[03-Dec-2025 16:22:04 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: There is no active transaction in C:\xampp\htdocs\smekda\proses_pemesanan.php:316
+Stack trace:
+#0 C:\xampp\htdocs\smekda\proses_pemesanan.php(316): PDO->rollBack()
+#1 {main}
+  thrown in C:\xampp\htdocs\smekda\proses_pemesanan.php on line 316
+[03-Dec-2025 16:27:30 Europe/Berlin] ==========================================
+[03-Dec-2025 16:27:30 Europe/Berlin] PROSES PEMESANAN DIMULAI - 2025-12-03 16:27:30
+[03-Dec-2025 16:27:30 Europe/Berlin] ==========================================
+[03-Dec-2025 16:27:30 Europe/Berlin] Data Form:
+[03-Dec-2025 16:27:30 Europe/Berlin] - Nama: raffah
+[03-Dec-2025 16:27:30 Europe/Berlin] - No HP: 23423535543
+[03-Dec-2025 16:27:30 Europe/Berlin] - Produk Nama: 'Ganci Smekda'
+[03-Dec-2025 16:27:30 Europe/Berlin] - Product ID: 0
+[03-Dec-2025 16:27:30 Europe/Berlin] - Jumlah: 1
+[03-Dec-2025 16:27:30 Europe/Berlin] - Catatan: y
+[03-Dec-2025 16:27:30 Europe/Berlin] Koneksi database OK
+[03-Dec-2025 16:27:30 Europe/Berlin] Mencari produk...
+[03-Dec-2025 16:27:30 Europe/Berlin] Cari berdasarkan nama: 'Ganci Smekda'
+[03-Dec-2025 16:27:30 Europe/Berlin] Nama setelah trim: 'Ganci Smekda'
+[03-Dec-2025 16:27:30 Europe/Berlin] Produk ditemukan dengan query: SELECT * FROM merchandise WHERE nama_produk LIKE ? LIMIT 1
+[03-Dec-2025 16:27:30 Europe/Berlin] Cek stok: Tersedia = 10, Dipesan = 1
+[03-Dec-2025 16:27:30 Europe/Berlin] Harga satuan: Rp 10.000
+[03-Dec-2025 16:27:30 Europe/Berlin] Total harga: Rp 10.000
+[03-Dec-2025 16:27:30 Europe/Berlin] Kode pesanan: SMEKDA-20251203-88BC5626
+[03-Dec-2025 16:27:30 Europe/Berlin] Proses upload file...
+[03-Dec-2025 16:27:30 Europe/Berlin] Nama file: kartu_1764775650_27e5884ef03de6b6.jpeg
+[03-Dec-2025 16:27:30 Europe/Berlin] Path lengkap: C:\xampp\htdocs\smekda/uploads/kartu_pelajar/kartu_1764775650_27e5884ef03de6b6.jpeg
+[03-Dec-2025 16:27:30 Europe/Berlin] File berhasil diupload: 49926 bytes
+[03-Dec-2025 16:27:30 Europe/Berlin] Menyimpan data ke database...
+[03-Dec-2025 16:27:30 Europe/Berlin] Pesanan disimpan. ID: 2
+[03-Dec-2025 16:27:30 Europe/Berlin] File dihapus karena rollback
+[03-Dec-2025 16:27:30 Europe/Berlin] ERROR DATABASE: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list'
+[03-Dec-2025 16:27:30 Europe/Berlin] Trace: #0 C:\xampp\htdocs\smekda\proses_pemesanan.php(297): PDO->prepare('\r\n        UPDAT...')
+#1 {main}
