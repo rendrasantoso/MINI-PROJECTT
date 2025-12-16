@@ -5,7 +5,7 @@
 
 // Konfigurasi database
 $host = 'localhost';
-$dbname = 'smekda_jersey';
+$dbname = 'smekda_kece';
 $username = 'root';
 $password = '';
 

@@ -161,9 +161,9 @@ unset($jadwal); // Hapus reference
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
         
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            margin:  5;
+            padding: 5;
+            box-sizing: border-box; 
         }
 
         /* FIX SEMUA PSEUDO ELEMENTS YANG BERMASALAH */
@@ -180,14 +180,14 @@ unset($jadwal); // Hapus reference
             visibility: hidden !important;
         }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 30%, #16213e 70%, #0a0a0a 100%);
-            color: #fff;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            min-height: 100vh;
-        }
+       body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f0714ff; /* 1 WARNA SOLID */
+    color: #fff;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
 
         /* ========== CONTAINER FLUID ========== */
         .container {
@@ -202,7 +202,7 @@ unset($jadwal); // Hapus reference
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(13, 13, 16, 0.4);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1000;
@@ -214,7 +214,7 @@ unset($jadwal); // Hapus reference
         .navbar.scrolled {
             padding: 0.8rem 0;
             background: rgba(10, 10, 10, 0.98);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 20px rgba(195, 130, 244, 0.3);
         }
 
         .nav-container {
@@ -230,11 +230,9 @@ unset($jadwal); // Hapus reference
         .nav-logo {
     font-size: 1.8rem;
     font-weight: 900;
-    color: #ffffff; /* PUTIH */
-    /* atau */
-    color: #efeeeeff; /* MERAH MUDA */
-    /* atau sesuaikan dengan logo besar */
-    color: #ebebebff; /* KUNING EMAS */
+    color: #ffffff;
+    color: #efeeeeff; 
+    color: #ebebebff;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -313,14 +311,17 @@ unset($jadwal); // Hapus reference
         }
 
         /* ========== HERO FLUID ========== */
-        header.hero {
+        /* ========== HERO FLUID ========== */
+header.hero {
     position: relative;
     height: 100vh;
     
-    /* PILIH SATU WARNA DI BAWAH INI: */
-    
-    /* 1. HITAM PEKAT */
-    background: #1c1c3cff;
+    /* GAMBAR BACKGROUND */
+     /* background-image: url('./assets/CYAKS.jpeg');     */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     
     display: flex;
     flex-direction: column;
@@ -330,41 +331,43 @@ unset($jadwal); // Hapus reference
     padding-top: 80px;
     overflow: hidden;
 }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #667eea, transparent);
-        }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            padding: 3rem;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(30px);
-            border-radius: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            max-width: 900px;
-            margin: 0 auto;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-        }
+/* OVERLAY GELAP */
+header.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg, 
+        rgba(0, 0, 0, 0.7), 
+        rgba(28, 28, 60, 0.6)
+    );
+    z-index: 1;
+}
 
-        .logo {
-            font-size: 4.5rem;
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #667eea);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-shift 8s ease infinite;
-        }
-
+/* KONTEN DI ATAS OVERLAY */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 3rem;
+    background: transparent;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.logo {
+    font-size: 5.1rem;
+    font-weight: 1000;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+    color: #E0B0FF; /* UNGU MUDA/LAVENDER */
+    text-shadow: 
+        0 0 30px rgba(138, 43, 226, 0.9),  /* GLOW UNGU DALAM */
+        0 0 60px rgba(138, 43, 226, 0.6),  /* GLOW UNGU LUAR */
+        0 4px 15px rgba(0, 0, 0, 1);       /* SHADOW HITAM TEBAL */
+}
         @keyframes gradient-shift {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -374,16 +377,15 @@ unset($jadwal); // Hapus reference
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: #f5e0b3ff; /* KUNING EMAS */
-    /* atau */
-    color: #fbf9f9ff; /* MERAH MUDA */
-        }
-
+    color: #ffffffff; /* KUNING EMAS CERAH */
+    text-shadow: 0 2px 10px rgba(255, 253, 253, 0.9),
+                 0 0 20px rgba(41, 10, 39, 0.6); /* SHADOW GELAP + GLOW */
+}
         .hero-tagline {
-            font-size: 1.4rem;
+            font-size: 1.8rem;
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 3rem;
-            font-weight: 300;
+            font-weight: 600;
         }
 
         /* ========== BUTTON FLUID ========== */
@@ -392,8 +394,8 @@ unset($jadwal); // Hapus reference
             align-items: center;
             justify-content: center;
             gap: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ff6b6b 100%);
-            color: white;
+            background:  hsla(270, 78%, 66%, 1.00) 50%;
+            color:  hsla(270, 30%, 96%, 1.00) ;
             padding: 1.4rem 3.5rem;
             border-radius: 50px;
             font-weight: 600;
@@ -414,7 +416,7 @@ unset($jadwal); // Hapus reference
 
         .btn-ticket {
             background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
-            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 15px 40px rgba(254, 254, 254, 0.3);
             padding: 1.2rem 2.5rem;
             font-size: 1.1rem;
         }
@@ -438,6 +440,7 @@ unset($jadwal); // Hapus reference
         section {
             padding: 6rem 0;
             position: relative;
+            background: #f2f2f7ff;
         }
 
         section::before {
@@ -452,24 +455,22 @@ unset($jadwal); // Hapus reference
             border-radius: 2px;
         }
 
-        section h2 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, #667eea, #ff6b6b, #feca57);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+       section h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1.9rem;
+    color: #a076f0ff; /* PUTIH */
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
         .section-subtitle {
             text-align: center;
             color: rgba(255, 255, 255, 0.7);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 4rem;
             max-width: 800px;
             margin-left: auto;
@@ -478,11 +479,8 @@ unset($jadwal); // Hapus reference
         }
 
         /* ========== ABOUT FLUID ========== */
-        #about {
-            background: linear-gradient(135deg, 
-                rgba(26, 26, 46, 0.7) 0%, 
-                rgba(22, 33, 62, 0.7) 100%);
-            backdrop-filter: blur(10px);
+      #about {
+    background: transparent; /* ATAU HAPUS PROPERTY BACKGROUND */
         }
 
         .about-content {
@@ -540,14 +538,8 @@ unset($jadwal); // Hapus reference
 
         /* ========== MATCH CARD FLUID ========== */
         #jadwal-match {
-            background: linear-gradient(135deg, 
-                rgba(10, 10, 10, 0.8) 0%, 
-                rgba(26, 26, 46, 0.6) 50%,
-                rgba(10, 10, 10, 0.8) 100%);
-            backdrop-filter: blur(10px);
-            
-            
-        }
+    background: transparent; /* ATAU HAPUS PROPERTY BACKGROUND */
+}
 
         .match-container {
             display: grid;
@@ -629,11 +621,11 @@ unset($jadwal); // Hapus reference
 
         .ticket-availability {
             background: rgba(37, 211, 102, 0.15);
-            border: 1px solid rgba(37, 211, 102, 0.3);
+            border: 1px solid rgba(246, 249, 247, 0.3);
             padding: 1.2rem;
             border-radius: 16px;
             text-align: center;
-            color: #25d366;
+            color: #f8faf9ff;
             font-weight: 600;
             margin-bottom: 2rem;
             backdrop-filter: blur(10px);
@@ -679,11 +671,8 @@ unset($jadwal); // Hapus reference
 
         /* ========== MERCHANDISE FLUID ========== */
         #pricing {
-            background: linear-gradient(135deg, 
-                rgba(22, 33, 62, 0.7) 0%, 
-                rgba(26, 26, 46, 0.7) 100%);
-            backdrop-filter: blur(10px);
-        }
+    background: transparent; /* ATAU HAPUS PROPERTY BACKGROUND */
+}
 
         .merchandise-grid {
             display: grid;
@@ -794,7 +783,7 @@ unset($jadwal); // Hapus reference
 
         .stock-available {
             background: rgba(37, 211, 102, 0.15);
-            color: #25d366;
+            color: #fefefeff;
             border: 1px solid rgba(37, 211, 102, 0.3);
         }
 
@@ -805,13 +794,9 @@ unset($jadwal); // Hapus reference
         }
 
         /* ========== ORDER STEPS FLUID ========== */
-        #order-info {
-            background: linear-gradient(135deg, 
-                rgba(10, 10, 10, 0.8) 0%, 
-                rgba(30, 30, 46, 0.6) 50%,
-                rgba(10, 10, 10, 0.8) 100%);
-            backdrop-filter: blur(10px);
-        }
+     #order-info {
+    background: transparent; /* ATAU HAPUS PROPERTY BACKGROUND */
+}
 
         .order-steps {
             max-width: 900px;
@@ -867,12 +852,9 @@ unset($jadwal); // Hapus reference
         }
 
         /* ========== FORM FLUID ========== */
-        #form-pemesanan {
-            background: linear-gradient(135deg, 
-                rgba(22, 33, 62, 0.8) 0%, 
-                rgba(26, 26, 46, 0.8) 100%);
-            backdrop-filter: blur(10px);
-        }
+ #form-pemesanan {
+    background: transparent; /* ATAU HAPUS PROPERTY BACKGROUND */
+}
 
         .form-container {
             background: rgba(255, 255, 255, 0.08);
@@ -952,13 +934,9 @@ unset($jadwal); // Hapus reference
         }
 
         /* ========== CONTACT FLUID ========== */
-        #contact {
-            background: linear-gradient(135deg, 
-                rgba(22, 33, 62, 0.8) 0%, 
-                rgba(26, 26, 46, 0.8) 100%);
-            backdrop-filter: blur(10px);
-        }
-
+     #contact {
+    background: transparent; /* ATAU HAPUS PROPERTY BACKGROUND */
+}
         .contact-links {
             display: flex;
             justify-content: center;
@@ -967,20 +945,25 @@ unset($jadwal); // Hapus reference
             margin-top: 3rem;
         }
 
-        .contact-links a {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem 3rem;
-            /* font-weight: 600;
-            font-size: 1.3rem; */
-    
-            
-            color: white;
-            /* text-decoration: none; */
-            max-height: 600px;
-            justify-content: center;
-        }
+.contact-links a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 3rem;
+    color: white;
+    max-height: 600px;
+    justify-content: center;
+    font-size: 1.8rem; /* TAMBAHKAN INI - ukuran font */
+}
+
+.contact-links a svg {
+    width: 50px !important;  /* TAMBAHKAN INI - ukuran icon WA */
+    height: 50px !important;
+}
+
+.contact-links a i {
+    font-size: 2.5rem; /* TAMBAHKAN INI - ukuran icon Instagram */
+}
 
       
 
@@ -1092,7 +1075,7 @@ unset($jadwal); // Hapus reference
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
             .logo {
-                font-size: 3.5rem;
+                font-size: 3    .5rem;
             }
             
             .hero h1 {
@@ -1195,9 +1178,9 @@ select, option {
     border-radius: 8px !important;
 }
 
-select:focus {
+ select:focus {
     outline: none !important;
-    border-color: #667eea !important;
+    border-color: #f2f2f4ff !important;
 }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -1214,7 +1197,7 @@ select:focus {
         <div class="nav-container">
             <div class="nav-logo">
                 <i class="fas fa-fire"></i>
-                SMEKDA
+             SMEKDA 1912
             </div>
             <ul class="nav-links">
                 <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
@@ -1245,26 +1228,15 @@ select:focus {
 
     <!-- About Section -->
     <section id="about" class="container">
-        <h2><i class="fas fa-flag"></i> HISTORY SMEKDA</h2>
-        <p class="section-subtitle">GAK SMEKDA GAK LIAR - Lebih dari sekedar merchandise, ini adalah identitas kami</p>
+        <h2><i class="fas fa-flag"></i> IDENTITAS SMEKDA</h2>
+        <p class="section-subtitle">GAK SMEKDA GAK LIAR - LEBIH DARI SEKEDAR MERCHANDISE, INI ADALAH IDENTITAS KAMI</p>
         
         <div class="about-content">
             <div class="about-text">
-                <h3><i class="fas fa-history"></i> Tentang Ultras Smekda</h3>
+                <h3><i class="fas fa-history"></i> TENTANG KAMI</h3>
                 <p>Smekda bukan hanya sebuah nama, tetapi sebuah keluarga besar yang dipersatukan oleh semangat dan dedikasi terhadap tim kesayangan. Kami adalah suporter yang selalu hadir, mendukung dalam suka maupun duka.</p>
                 <p>Setiap merchandise yang kami tawarkan adalah simbol kebanggaan dan identitas. Dengan mengenakan jersey Smekda, Anda bukan hanya mendukung tim, tetapi juga menjadi bagian dari keluarga besar yang solid dan penuh semangat.</p>
-                <p><strong>GAK SMEKDA GAK LIAR</strong> - Ini bukan hanya slogan, tapi cara hidup kami!</p>
-                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <span style="background: rgba(102, 126, 234, 0.2); color: #667eea; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">
-                        <i class="fas fa-heart"></i> Passion
-                    </span>
-                    <span style="background: rgba(255, 107, 107, 0.2); color: #ff6b6b; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">
-                        <i class="fas fa-users"></i> Community
-                    </span>
-                    <span style="background: rgba(254, 202, 87, 0.2); color: #feca57; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">
-                        <i class="fas fa-flag"></i> Pride
-                    </span>
-                </div>
+                <p><strong>GAK SMEKDA GAK LIAR</strong>     !</p>
             </div>
             <div class="about-image">
                 <img src="./assets/smekda.jpg" alt="Smekda Community" 
@@ -1275,8 +1247,8 @@ select:focus {
 
     <!-- JADWAL PERTANDINGAN -->
     <section id="jadwal-match" class="container">
-        <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <h2><i class="fas fa-calendar-check" style='margin-top: 2rem'></i> JADWAL PERTANDINGAN</h2>
+        <div style="margin-top: 3rem; display: flex; gap: 2rem; flex-wrap: wrap;">
+        <h2><i class="fas fa-calendar-check" style='margin-top: 5rem'></i> JADWAL PERTANDINGAN</h2>
     </div>
         <p class="section-subtitle">Jangan lewatkan pertandingan seru kami! Pesan tiket sekarang juga</p>
         
@@ -1485,9 +1457,9 @@ select:focus {
                 </div>
 
                 <div class="form-group">
-                    <label for="no_hp"><i class="fas fa-phone"></i> No HP / WhatsApp *</label>
-                    <input type="tel" id="no_hp" name="no_hp" placeholder="Contoh: 081234567890" pattern="[0-9]{10,13}" required>
-                    <small><i class="fas fa-info-circle"></i> Format: 08xxxxxxxxxx (10-13 digit)</small>
+                    <label for="no_hp"><i class="fas fa-phone"></i> EMAIL*</label>
+                    <input type="tel" id="no_hp" name="no_hp" placeholder="Contoh: ultrasmskeda@gmail.com" pattern="[0-9]{10,13}" required>
+                    <small><i class="fas fa-info-circle"></i> Format: xxxxxxxx@gmail.com</small>
                 </div>
             
                 <div class="form-group">

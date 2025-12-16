@@ -11,6 +11,10 @@ class ComposerStaticInitf7e9b5f946f7ec9110439346d71c9f07
         array (
             'SnapBi\\' => 7,
         ),
+        'P' =>
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'M' =>
         array (
             'Midtrans\\' => 9,
@@ -21,6 +25,10 @@ class ComposerStaticInitf7e9b5f946f7ec9110439346d71c9f07
         'SnapBi\\' =>
         array (
             0 => __DIR__ . '/..' . '/midtrans/midtrans-php/SnapBi',
+        ),
+        'PHPMailer\\PHPMailer\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Midtrans\\' =>
         array (

@@ -39,7 +39,16 @@ $all_jadwal = $pdo->query("SELECT * FROM jadwal_match ORDER BY tanggal DESC")->f
 $all_tiket = $pdo->query("SELECT t.*, jm.pertandingan FROM tiket t LEFT JOIN jadwal_match jm ON t.match_id = jm.id ORDER BY t.id DESC")->fetchAll(PDO::FETCH_ASSOC);
 
 // Merchandise
+// SEBELUM (SALAH):
 $all_merchandise = $pdo->query("SELECT * FROM merchandise ORDER BY id DESC")->fetchAll(PDO::FETCH_ASSOC);
+
+// SESUDAH (BENAR):
+$all_merchandise = $pdo->query("
+    SELECT *, 
+           (stok - terjual) as stok_tersedia
+    FROM merchandise 
+    ORDER BY id DESC
+")->fetchAll(PDO::FETCH_ASSOC);
 
 // Semua pesanan dari pemesanan_merchandise
 $all_pesanan = $pdo->query("
@@ -298,14 +307,31 @@ unset($_SESSION['success'], $_SESSION['error']);
             display: block; color: #aaa; font-size: 0.9rem;
             margin-bottom: 0.5rem; font-weight: 600;
         }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 0.8rem; background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px;
-            color: #fff; font-size: 0.95rem; transition: all 0.3s ease;
-        }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none; border-color: #667eea; background: rgba(255, 255, 255, 0.08);
-        }
+       .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 0.8rem; background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px;
+    color: #fff; font-size: 0.95rem; transition: all 0.3s ease;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none; border-color: #667eea; background: rgba(255, 255, 255, 0.08);
+}
+
+/* TAMBAHKAN INI UNTUK FIX DROPDOWN OPTIONS */
+.form-group select option {
+    background-color: #1e1e2e;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.form-group select option:hover {
+    background-color: #2a2a3e;
+}
+
+.form-group select option:checked {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #ffffff;
+}
+        
 
         /* Responsive */
         @media (max-width: 1024px) {
@@ -563,48 +589,100 @@ unset($_SESSION['success'], $_SESSION['error']);
             </div>
         </section>
 
-        <!-- Merchandise Section -->
-        <section class="content-section" id="merchandise">
-            <div class="section-header">
-                <h2><i class="fas fa-tshirt"></i> Manajemen Merchandise</h2>
-                <button class="btn-add" onclick="openModal('merchandiseModal')">
-                    <i class="fas fa-plus"></i> Tambah Merchandise
-                </button>
-            </div>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th><th>Produk</th><th>Kategori</th><th>Harga</th>
-                            <th>Stok</th><th>Terjual</th><th>Status</th><th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($all_merchandise as $m): ?>
-                        <tr>
-                            <td>#P<?php echo str_pad($m['id'], 3, '0', STR_PAD_LEFT); ?></td>
-                            <td><?php echo htmlspecialchars($m['nama_produk']); ?></td>
-                            <td><?php echo htmlspecialchars($m['kategori']); ?></td>
-                            <td>Rp<?php echo number_format($m['harga'], 0, ',', '.'); ?></td>
-                            <td><?php echo $m['stok']; ?></td>
-                            <td><?php echo $m['terjual']; ?></td>
-                            <td><span class="badge badge-<?php echo $m['stok']>0?'success':'cancelled'; ?>"><?php echo ucfirst($m['status']); ?></span></td>
-                            <td>
-                                <div class="action-buttons">
-                                    <button class="btn-edit" onclick="editMerchandise(<?php echo $m['id']; ?>)">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="btn-delete" onclick="deleteData('merchandise', <?php echo $m['id']; ?>)">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        <!-- Merchandise Section - FIXED VERSION (TANPA STOK AWAL) -->
+<section class="content-section" id="merchandise">
+    <div class="section-header">
+        <h2><i class="fas fa-tshirt"></i> Manajemen Merchandise</h2>
+        <button class="btn-add" onclick="openModal('merchandiseModal')">
+            <i class="fas fa-plus"></i> Tambah Merchandise
+        </button>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Produk</th>
+                    <th>Kategori</th>
+                    <th>Harga</th>
+                    <th>Terjual</th>
+                    <th>Stok Tersedia</th> <!-- Yang penting cuma ini! -->
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($all_merchandise as $m): 
+                    $stok_tersedia = $m['stok_tersedia']; // stok - terjual
+                ?>
+                <tr>
+                    <td>#P<?php echo str_pad($m['id'], 3, '0', STR_PAD_LEFT); ?></td>
+                    <td><?php echo htmlspecialchars($m['nama_produk']); ?></td>
+                    <td><?php echo htmlspecialchars($m['kategori']); ?></td>
+                    <td>Rp<?php echo number_format($m['harga'], 0, ',', '.'); ?></td>
+                    
+                    <!-- KOLOM TERJUAL (sudah naik jadi 2!) -->
+                    <td>
+                        <span style="color: #48dbfb; font-weight: 700; font-size: 1rem;">
+                            <i class="fas fa-shopping-cart"></i> <?php echo $m['terjual']; ?> unit
+                        </span>
+                    </td>
+                    
+                    <!-- KOLOM STOK TERSEDIA (20 - 2 = 18) -->
+                    <td>
+                        <span style="
+                            color: <?php echo $stok_tersedia > 5 ? '#25d366' : ($stok_tersedia > 0 ? '#feca57' : '#ff6b6b'); ?>; 
+                            font-weight: 700; 
+                            font-size: 1.2rem;
+                            padding: 0.3rem 0.8rem;
+                            background: <?php echo $stok_tersedia > 5 ? 'rgba(37, 211, 102, 0.1)' : ($stok_tersedia > 0 ? 'rgba(254, 202, 87, 0.1)' : 'rgba(255, 107, 107, 0.1)'); ?>;
+                            border-radius: 8px;
+                            display: inline-block;
+                        ">
+                            <i class="fas fa-box"></i> <?php echo $stok_tersedia; ?>
+                        </span>
+                        <?php if ($stok_tersedia <= 5 && $stok_tersedia > 0): ?>
+                            <small style="color: #feca57; display: block; margin-top: 0.3rem;">
+                                <i class="fas fa-exclamation-triangle"></i> Stok menipis!
+                            </small>
+                        <?php endif; ?>
+                    </td>
+                    
+                    <!-- STATUS -->
+                    <td>
+                        <span class="badge badge-<?php echo $stok_tersedia > 0 ? 'success' : 'cancelled'; ?>">
+                            <?php echo $stok_tersedia > 0 ? 'Tersedia' : 'Habis'; ?>
+                        </span>
+                    </td>
+                    
+                    <!-- AKSI -->
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-edit" onclick="editMerchandise(<?php echo $m['id']; ?>)" title="Edit">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-delete" onclick="deleteData('merchandise', <?php echo $m['id']; ?>)" title="Hapus">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        
+        <!-- INFO BOX DI BAWAH TABEL -->
+        <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(102, 126, 234, 0.1); border-left: 4px solid #667eea; border-radius: 8px;">
+            <p style="margin: 0; color: #aaa; font-size: 0.9rem;">
+                <i class="fas fa-info-circle"></i> <strong>Keterangan:</strong>
+            </p>
+            <ul style="margin: 0.5rem 0 0 1.5rem; color: #aaa; font-size: 0.85rem;">
+                <li><strong>Terjual:</strong> Total unit yang sudah dibeli customer</li>
+                <li><strong>Stok Tersedia:</strong> Sisa stok yang bisa dijual (Stok Awal - Terjual)</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
         <!-- Pesanan Section -->
         <section class="content-section" id="pesanan">

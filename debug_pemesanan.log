@@ -1,0 +1,349 @@
+[2025-12-09 01:59:51] ==========================================
+[2025-12-09 01:59:51] PROSES PEMESANAN DIMULAI
+[2025-12-09 01:59:51] ==========================================
+[2025-12-09 01:59:51] Form Data: nama=PPT SURYA GEMILANG, hp=08327249730, produk=Dresscode Smekda, jumlah=1
+[2025-12-09 01:59:51] ✅ Validasi OK
+[2025-12-09 01:59:51] Mencari produk: 'Dresscode Smekda'
+[2025-12-09 01:59:51] ✅ Produk ditemukan:
+[2025-12-09 01:59:51]   ID: 10
+[2025-12-09 01:59:51]   Nama: Dresscode Smekda
+[2025-12-09 01:59:51]   Stok: 20
+[2025-12-09 01:59:51]   Terjual: 0
+[2025-12-09 01:59:51]   Stok Tersedia: 20
+[2025-12-09 01:59:51] Kode pesanan: SMEKDA-20251209-E610DAC7
+[2025-12-09 01:59:51] Total harga: Rp85.000
+[2025-12-09 01:59:51] ✅ File uploaded: kartu_1765241991_ddd030b0bf218aa6.jpeg
+[2025-12-09 01:59:51] ======== START DATABASE TRANSACTION ========
+[2025-12-09 01:59:51] 🔄 BEGIN TRANSACTION
+[2025-12-09 01:59:51] 📝 INSERT pesanan...
+[2025-12-09 01:59:51] ✅ INSERT berhasil. Pemesanan ID: 33
+[2025-12-09 01:59:51] ======== UPDATE STOK ========
+[2025-12-09 01:59:51] Query: UPDATE merchandise SET terjual = terjual + 1 WHERE id = 10
+[2025-12-09 01:59:51] Terjual SEBELUM: 0
+[2025-12-09 01:59:51] Jumlah order: 1
+[2025-12-09 01:59:51] Terjual SEHARUSNYA: 1
+[2025-12-09 01:59:51] Executing UPDATE...
+[2025-12-09 01:59:51] UPDATE executed. Affected rows: 1
+[2025-12-09 01:59:51] ✅ UPDATE berhasil dieksekusi
+[2025-12-09 01:59:51] ======== VERIFIKASI UPDATE ========
+[2025-12-09 01:59:51] Data SETELAH UPDATE:
+[2025-12-09 01:59:51]   ID: 10
+[2025-12-09 01:59:51]   Nama: Dresscode Smekda
+[2025-12-09 01:59:51]   Stok: 20
+[2025-12-09 01:59:51]   Terjual: 1 (sebelum: 0)
+[2025-12-09 01:59:51]   Stok Tersedia: 19
+[2025-12-09 01:59:51] PERBANDINGAN:
+[2025-12-09 01:59:51]   Expected terjual: 1
+[2025-12-09 01:59:51]   Actual terjual: 1
+[2025-12-09 01:59:51]   Match: YES ✅
+[2025-12-09 01:59:51] ✅✅✅ VERIFIKASI SUKSES! ✅✅✅
+[2025-12-09 01:59:51] 🔒 COMMIT TRANSACTION...
+[2025-12-09 01:59:51] ✅✅✅ TRANSACTION COMMITTED SUCCESSFULLY! ✅✅✅
+[2025-12-09 01:59:51] ==========================================
+[2025-12-09 01:59:51] Redirect ke payment.php
+[2025-12-09 02:15:12] ==========================================
+[2025-12-09 02:15:12] PROSES PEMESANAN DIMULAI
+[2025-12-09 02:15:12] ==========================================
+[2025-12-09 02:15:12] Form Data: nama=rendra, hp=08327249730, produk=Dresscode Smekda, jumlah=1
+[2025-12-09 02:15:12] ✅ Validasi OK
+[2025-12-09 02:15:12] Mencari produk: 'Dresscode Smekda'
+[2025-12-09 02:15:12] ✅ Produk ditemukan:
+[2025-12-09 02:15:12]   ID: 10
+[2025-12-09 02:15:12]   Nama: Dresscode Smekda
+[2025-12-09 02:15:12]   Stok: 20
+[2025-12-09 02:15:12]   Terjual: 1
+[2025-12-09 02:15:12]   Stok Tersedia: 19
+[2025-12-09 02:15:12] Kode pesanan: SMEKDA-20251209-699CE6FF
+[2025-12-09 02:15:12] Total harga: Rp85.000
+[2025-12-09 02:15:12] ✅ File uploaded: kartu_1765242912_d11a84df744d87af.jpg
+[2025-12-09 02:15:12] ======== START DATABASE TRANSACTION ========
+[2025-12-09 02:15:12] 🔄 BEGIN TRANSACTION
+[2025-12-09 02:15:12] 📝 INSERT pesanan...
+[2025-12-09 02:15:12] ✅ INSERT berhasil. Pemesanan ID: 34
+[2025-12-09 02:15:12] ======== UPDATE STOK ========
+[2025-12-09 02:15:12] Query: UPDATE merchandise SET terjual = terjual + 1 WHERE id = 10
+[2025-12-09 02:15:12] Terjual SEBELUM: 1
+[2025-12-09 02:15:12] Jumlah order: 1
+[2025-12-09 02:15:12] Terjual SEHARUSNYA: 2
+[2025-12-09 02:15:12] Executing UPDATE...
+[2025-12-09 02:15:12] UPDATE executed. Affected rows: 1
+[2025-12-09 02:15:12] ✅ UPDATE berhasil dieksekusi
+[2025-12-09 02:15:12] ======== VERIFIKASI UPDATE ========
+[2025-12-09 02:15:12] Data SETELAH UPDATE:
+[2025-12-09 02:15:12]   ID: 10
+[2025-12-09 02:15:12]   Nama: Dresscode Smekda
+[2025-12-09 02:15:12]   Stok: 20
+[2025-12-09 02:15:12]   Terjual: 2 (sebelum: 1)
+[2025-12-09 02:15:12]   Stok Tersedia: 18
+[2025-12-09 02:15:12] PERBANDINGAN:
+[2025-12-09 02:15:12]   Expected terjual: 2
+[2025-12-09 02:15:12]   Actual terjual: 2
+[2025-12-09 02:15:12]   Match: YES ✅
+[2025-12-09 02:15:12] ✅✅✅ VERIFIKASI SUKSES! ✅✅✅
+[2025-12-09 02:15:12] 🔒 COMMIT TRANSACTION...
+[2025-12-09 02:15:12] ✅✅✅ TRANSACTION COMMITTED SUCCESSFULLY! ✅✅✅
+[2025-12-09 02:15:12] ==========================================
+[2025-12-09 02:15:12] Redirect ke payment.php
+[2025-12-09 02:16:47] ==========================================
+[2025-12-09 02:16:47] PROSES PEMESANAN DIMULAI
+[2025-12-09 02:16:47] ==========================================
+[2025-12-09 02:16:47] Form Data: nama=rendra, hp=08327249730, produk=Dresscode Smekda, jumlah=1
+[2025-12-09 02:16:47] ✅ Validasi OK
+[2025-12-09 02:16:47] Mencari produk: 'Dresscode Smekda'
+[2025-12-09 02:16:47] ✅ Produk ditemukan:
+[2025-12-09 02:16:47]   ID: 10
+[2025-12-09 02:16:47]   Nama: Dresscode Smekda
+[2025-12-09 02:16:47]   Stok: 20
+[2025-12-09 02:16:47]   Terjual: 0
+[2025-12-09 02:16:47]   Stok Tersedia: 20
+[2025-12-09 02:16:47] Kode pesanan: SMEKDA-20251209-18FB02A3
+[2025-12-09 02:16:47] Total harga: Rp85.000
+[2025-12-09 02:16:47] ✅ File uploaded: kartu_1765243007_1bff5ba0447618c2.jpg
+[2025-12-09 02:16:47] ======== START DATABASE TRANSACTION ========
+[2025-12-09 02:16:47] 🔄 BEGIN TRANSACTION
+[2025-12-09 02:16:47] 📝 INSERT pesanan...
+[2025-12-09 02:16:47] ✅ INSERT berhasil. Pemesanan ID: 32
+[2025-12-09 02:16:47] ======== UPDATE STOK ========
+[2025-12-09 02:16:47] Query: UPDATE merchandise SET terjual = terjual + 1 WHERE id = 10
+[2025-12-09 02:16:47] Terjual SEBELUM: 0
+[2025-12-09 02:16:47] Jumlah order: 1
+[2025-12-09 02:16:47] Terjual SEHARUSNYA: 1
+[2025-12-09 02:16:47] Executing UPDATE...
+[2025-12-09 02:16:47] UPDATE executed. Affected rows: 1
+[2025-12-09 02:16:47] ✅ UPDATE berhasil dieksekusi
+[2025-12-09 02:16:47] ======== VERIFIKASI UPDATE ========
+[2025-12-09 02:16:47] Data SETELAH UPDATE:
+[2025-12-09 02:16:47]   ID: 10
+[2025-12-09 02:16:47]   Nama: Dresscode Smekda
+[2025-12-09 02:16:47]   Stok: 20
+[2025-12-09 02:16:47]   Terjual: 1 (sebelum: 0)
+[2025-12-09 02:16:47]   Stok Tersedia: 19
+[2025-12-09 02:16:47] PERBANDINGAN:
+[2025-12-09 02:16:47]   Expected terjual: 1
+[2025-12-09 02:16:47]   Actual terjual: 1
+[2025-12-09 02:16:47]   Match: YES ✅
+[2025-12-09 02:16:47] ✅✅✅ VERIFIKASI SUKSES! ✅✅✅
+[2025-12-09 02:16:47] 🔒 COMMIT TRANSACTION...
+[2025-12-09 02:16:47] ✅✅✅ TRANSACTION COMMITTED SUCCESSFULLY! ✅✅✅
+[2025-12-09 02:16:47] ==========================================
+[2025-12-09 02:16:47] Redirect ke payment.php
+[2025-12-09 02:22:13] ==========================================
+[2025-12-09 02:22:13] PROSES PEMESANAN DIMULAI
+[2025-12-09 02:22:13] ==========================================
+[2025-12-09 02:22:13] Form Data: nama=rendra, hp=08327249730, produk=ganci smekda, jumlah=1
+[2025-12-09 02:22:13] ✅ Validasi OK
+[2025-12-09 02:22:13] Mencari produk: 'ganci smekda'
+[2025-12-09 02:22:13] ✅ Produk ditemukan:
+[2025-12-09 02:22:13]   ID: 11
+[2025-12-09 02:22:13]   Nama: ganci smekda
+[2025-12-09 02:22:13]   Stok: 20
+[2025-12-09 02:22:13]   Terjual: 0
+[2025-12-09 02:22:13]   Stok Tersedia: 20
+[2025-12-09 02:22:13] Kode pesanan: SMEKDA-20251209-2AD871E9
+[2025-12-09 02:22:13] Total harga: Rp20.000
+[2025-12-09 02:22:13] ✅ File uploaded: kartu_1765243333_133fae2b9cc6262b.jpeg
+[2025-12-09 02:22:13] ======== START DATABASE TRANSACTION ========
+[2025-12-09 02:22:13] 🔄 BEGIN TRANSACTION
+[2025-12-09 02:22:13] 📝 INSERT pesanan...
+[2025-12-09 02:22:13] ✅ INSERT berhasil. Pemesanan ID: 33
+[2025-12-09 02:22:13] ======== UPDATE STOK ========
+[2025-12-09 02:22:13] Query: UPDATE merchandise SET terjual = terjual + 1 WHERE id = 11
+[2025-12-09 02:22:13] Terjual SEBELUM: 0
+[2025-12-09 02:22:13] Jumlah order: 1
+[2025-12-09 02:22:13] Terjual SEHARUSNYA: 1
+[2025-12-09 02:22:13] Executing UPDATE...
+[2025-12-09 02:22:13] UPDATE executed. Affected rows: 1
+[2025-12-09 02:22:13] ✅ UPDATE berhasil dieksekusi
+[2025-12-09 02:22:13] ======== VERIFIKASI UPDATE ========
+[2025-12-09 02:22:13] Data SETELAH UPDATE:
+[2025-12-09 02:22:13]   ID: 11
+[2025-12-09 02:22:13]   Nama: ganci smekda
+[2025-12-09 02:22:13]   Stok: 20
+[2025-12-09 02:22:13]   Terjual: 1 (sebelum: 0)
+[2025-12-09 02:22:13]   Stok Tersedia: 19
+[2025-12-09 02:22:13] PERBANDINGAN:
+[2025-12-09 02:22:13]   Expected terjual: 1
+[2025-12-09 02:22:13]   Actual terjual: 1
+[2025-12-09 02:22:13]   Match: YES ✅
+[2025-12-09 02:22:13] ✅✅✅ VERIFIKASI SUKSES! ✅✅✅
+[2025-12-09 02:22:13] 🔒 COMMIT TRANSACTION...
+[2025-12-09 02:22:13] ✅✅✅ TRANSACTION COMMITTED SUCCESSFULLY! ✅✅✅
+[2025-12-09 02:22:13] ==========================================
+[2025-12-09 02:22:13] Redirect ke payment.php
+[2025-12-15 02:49:10] ==========================================
+[2025-12-15 02:49:10] PROSES PEMESANAN DIMULAI
+[2025-12-15 02:49:10] ==========================================
+[2025-12-15 02:49:10] Form Data: nama=rendra, hp=08327249730, produk=stiker, jumlah=5
+[2025-12-15 02:49:10] ✅ Validasi OK
+[2025-12-15 02:49:10] Mencari produk: 'stiker'
+[2025-12-15 02:49:10] ✅ Produk ditemukan:
+[2025-12-15 02:49:10]   ID: 12
+[2025-12-15 02:49:10]   Nama: stiker
+[2025-12-15 02:49:10]   Stok: 10
+[2025-12-15 02:49:10]   Terjual: 0
+[2025-12-15 02:49:10]   Stok Tersedia: 10
+[2025-12-15 02:49:10] Kode pesanan: SMEKDA-20251215-35B294EC
+[2025-12-15 02:49:10] Total harga: Rp25.000
+[2025-12-15 02:49:10] ✅ File uploaded: kartu_1765763350_cc34c8f6ef69ef6e.jpeg
+[2025-12-15 02:49:10] ======== START DATABASE TRANSACTION ========
+[2025-12-15 02:49:10] 🔄 BEGIN TRANSACTION
+[2025-12-15 02:49:10] 📝 INSERT pesanan...
+[2025-12-15 02:49:10] ✅ INSERT berhasil. Pemesanan ID: 34
+[2025-12-15 02:49:10] ======== UPDATE STOK ========
+[2025-12-15 02:49:10] Query: UPDATE merchandise SET terjual = terjual + 5 WHERE id = 12
+[2025-12-15 02:49:10] Terjual SEBELUM: 0
+[2025-12-15 02:49:10] Jumlah order: 5
+[2025-12-15 02:49:10] Terjual SEHARUSNYA: 5
+[2025-12-15 02:49:10] Executing UPDATE...
+[2025-12-15 02:49:10] UPDATE executed. Affected rows: 1
+[2025-12-15 02:49:10] ✅ UPDATE berhasil dieksekusi
+[2025-12-15 02:49:10] ======== VERIFIKASI UPDATE ========
+[2025-12-15 02:49:10] Data SETELAH UPDATE:
+[2025-12-15 02:49:10]   ID: 12
+[2025-12-15 02:49:10]   Nama: stiker
+[2025-12-15 02:49:10]   Stok: 10
+[2025-12-15 02:49:10]   Terjual: 5 (sebelum: 0)
+[2025-12-15 02:49:10]   Stok Tersedia: 5
+[2025-12-15 02:49:10] PERBANDINGAN:
+[2025-12-15 02:49:10]   Expected terjual: 5
+[2025-12-15 02:49:10]   Actual terjual: 5
+[2025-12-15 02:49:10]   Match: YES ✅
+[2025-12-15 02:49:10] ✅✅✅ VERIFIKASI SUKSES! ✅✅✅
+[2025-12-15 02:49:10] 🔒 COMMIT TRANSACTION...
+[2025-12-15 02:49:10] ✅✅✅ TRANSACTION COMMITTED SUCCESSFULLY! ✅✅✅
+[2025-12-15 02:49:10] ==========================================
+[2025-12-15 02:49:10] Redirect ke payment.php
+[2025-12-15 06:02:44] ==========================================
+[2025-12-15 06:02:44] PROSES PEMESANAN DIMULAI
+[2025-12-15 06:02:44] ==========================================
+[2025-12-15 06:02:44] Form Data: nama=DX, hp=08327249730, produk=Dresscode Smekda, jumlah=1
+[2025-12-15 06:02:44] Validasi gagal: Nama minimal 3 karakter
+[2025-12-15 06:03:08] ==========================================
+[2025-12-15 06:03:08] PROSES PEMESANAN DIMULAI
+[2025-12-15 06:03:08] ==========================================
+[2025-12-15 06:03:08] Form Data: nama=NDAKK, hp=08327249730, produk=Dresscode Smekda, jumlah=1
+[2025-12-15 06:03:08] ✅ Validasi OK
+[2025-12-15 06:03:08] Mencari produk: 'Dresscode Smekda'
+[2025-12-15 06:03:08] ✅ Produk ditemukan:
+[2025-12-15 06:03:08]   ID: 10
+[2025-12-15 06:03:08]   Nama: Dresscode Smekda
+[2025-12-15 06:03:08]   Stok: 20
+[2025-12-15 06:03:08]   Terjual: 1
+[2025-12-15 06:03:08]   Stok Tersedia: 19
+[2025-12-15 06:03:08] Kode pesanan: SMEKDA-20251215-F838BFA3
+[2025-12-15 06:03:08] Total harga: Rp85.000
+[2025-12-15 06:03:08] ✅ File uploaded: kartu_1765774988_a7e5fae47d0d73ff.jpeg
+[2025-12-15 06:03:08] ======== START DATABASE TRANSACTION ========
+[2025-12-15 06:03:08] 🔄 BEGIN TRANSACTION
+[2025-12-15 06:03:08] 📝 INSERT pesanan...
+[2025-12-15 06:03:08] ✅ INSERT berhasil. Pemesanan ID: 35
+[2025-12-15 06:03:08] ======== UPDATE STOK ========
+[2025-12-15 06:03:08] Query: UPDATE merchandise SET terjual = terjual + 1 WHERE id = 10
+[2025-12-15 06:03:08] Terjual SEBELUM: 1
+[2025-12-15 06:03:08] Jumlah order: 1
+[2025-12-15 06:03:08] Terjual SEHARUSNYA: 2
+[2025-12-15 06:03:08] Executing UPDATE...
+[2025-12-15 06:03:08] UPDATE executed. Affected rows: 1
+[2025-12-15 06:03:08] ✅ UPDATE berhasil dieksekusi
+[2025-12-15 06:03:08] ======== VERIFIKASI UPDATE ========
+[2025-12-15 06:03:08] Data SETELAH UPDATE:
+[2025-12-15 06:03:08]   ID: 10
+[2025-12-15 06:03:08]   Nama: Dresscode Smekda
+[2025-12-15 06:03:08]   Stok: 20
+[2025-12-15 06:03:08]   Terjual: 2 (sebelum: 1)
+[2025-12-15 06:03:08]   Stok Tersedia: 18
+[2025-12-15 06:03:08] PERBANDINGAN:
+[2025-12-15 06:03:08]   Expected terjual: 2
+[2025-12-15 06:03:08]   Actual terjual: 2
+[2025-12-15 06:03:08]   Match: YES ✅
+[2025-12-15 06:03:08] ✅✅✅ VERIFIKASI SUKSES! ✅✅✅
+[2025-12-15 06:03:08] 🔒 COMMIT TRANSACTION...
+[2025-12-15 06:03:08] ✅✅✅ TRANSACTION COMMITTED SUCCESSFULLY! ✅✅✅
+[2025-12-15 06:03:08] ==========================================
+[2025-12-15 06:03:08] Redirect ke payment.php
+[2025-12-15 06:06:00] ==========================================
+[2025-12-15 06:06:00] PROSES PEMESANAN DIMULAI
+[2025-12-15 06:06:00] ==========================================
+[2025-12-15 06:06:00] Form Data: nama=rendra, hp=0832724973, produk=ganci smekda, jumlah=1
+[2025-12-15 06:06:00] ✅ Validasi OK
+[2025-12-15 06:06:00] Mencari produk: 'ganci smekda'
+[2025-12-15 06:06:00] ✅ Produk ditemukan:
+[2025-12-15 06:06:00]   ID: 11
+[2025-12-15 06:06:00]   Nama: ganci smekda
+[2025-12-15 06:06:00]   Stok: 20
+[2025-12-15 06:06:00]   Terjual: 1
+[2025-12-15 06:06:00]   Stok Tersedia: 19
+[2025-12-15 06:06:00] Kode pesanan: SMEKDA-20251215-2C40000B
+[2025-12-15 06:06:00] Total harga: Rp20.000
+[2025-12-15 06:06:00] ✅ File uploaded: kartu_1765775160_64a24fc36b1ac086.jpeg
+[2025-12-15 06:06:00] ======== START DATABASE TRANSACTION ========
+[2025-12-15 06:06:00] 🔄 BEGIN TRANSACTION
+[2025-12-15 06:06:00] 📝 INSERT pesanan...
+[2025-12-15 06:06:00] ✅ INSERT berhasil. Pemesanan ID: 36
+[2025-12-15 06:06:00] ======== UPDATE STOK ========
+[2025-12-15 06:06:00] Query: UPDATE merchandise SET terjual = terjual + 1 WHERE id = 11
+[2025-12-15 06:06:00] Terjual SEBELUM: 1
+[2025-12-15 06:06:00] Jumlah order: 1
+[2025-12-15 06:06:00] Terjual SEHARUSNYA: 2
+[2025-12-15 06:06:00] Executing UPDATE...
+[2025-12-15 06:06:00] UPDATE executed. Affected rows: 1
+[2025-12-15 06:06:00] ✅ UPDATE berhasil dieksekusi
+[2025-12-15 06:06:00] ======== VERIFIKASI UPDATE ========
+[2025-12-15 06:06:00] Data SETELAH UPDATE:
+[2025-12-15 06:06:00]   ID: 11
+[2025-12-15 06:06:00]   Nama: ganci smekda
+[2025-12-15 06:06:00]   Stok: 20
+[2025-12-15 06:06:00]   Terjual: 2 (sebelum: 1)
+[2025-12-15 06:06:00]   Stok Tersedia: 18
+[2025-12-15 06:06:00] PERBANDINGAN:
+[2025-12-15 06:06:00]   Expected terjual: 2
+[2025-12-15 06:06:00]   Actual terjual: 2
+[2025-12-15 06:06:00]   Match: YES ✅
+[2025-12-15 06:06:00] ✅✅✅ VERIFIKASI SUKSES! ✅✅✅
+[2025-12-15 06:06:00] 🔒 COMMIT TRANSACTION...
+[2025-12-15 06:06:00] ✅✅✅ TRANSACTION COMMITTED SUCCESSFULLY! ✅✅✅
+[2025-12-15 06:06:00] ==========================================
+[2025-12-15 06:06:00] Redirect ke payment.php
+[2025-12-15 07:08:21] ==========================================
+[2025-12-15 07:08:21] PROSES PEMESANAN DIMULAI
+[2025-12-15 07:08:21] ==========================================
+[2025-12-15 07:08:21] Form Data: nama=rendra, hp=08327249730, produk=ganci smekda, jumlah=1
+[2025-12-15 07:08:21] ✅ Validasi OK
+[2025-12-15 07:08:21] Mencari produk: 'ganci smekda'
+[2025-12-15 07:08:21] ✅ Produk ditemukan:
+[2025-12-15 07:08:21]   ID: 11
+[2025-12-15 07:08:21]   Nama: ganci smekda
+[2025-12-15 07:08:21]   Stok: 20
+[2025-12-15 07:08:21]   Terjual: 2
+[2025-12-15 07:08:21]   Stok Tersedia: 18
+[2025-12-15 07:08:21] Kode pesanan: SMEKDA-20251215-94D996D1
+[2025-12-15 07:08:21] Total harga: Rp20.000
+[2025-12-15 07:08:21] ✅ File uploaded: kartu_1765778901_c9b0d4c3b20280fa.jpeg
+[2025-12-15 07:08:21] ======== START DATABASE TRANSACTION ========
+[2025-12-15 07:08:21] 🔄 BEGIN TRANSACTION
+[2025-12-15 07:08:21] 📝 INSERT pesanan...
+[2025-12-15 07:08:21] ✅ INSERT berhasil. Pemesanan ID: 37
+[2025-12-15 07:08:21] ======== UPDATE STOK ========
+[2025-12-15 07:08:21] Query: UPDATE merchandise SET terjual = terjual + 1 WHERE id = 11
+[2025-12-15 07:08:21] Terjual SEBELUM: 2
+[2025-12-15 07:08:21] Jumlah order: 1
+[2025-12-15 07:08:21] Terjual SEHARUSNYA: 3
+[2025-12-15 07:08:21] Executing UPDATE...
+[2025-12-15 07:08:21] UPDATE executed. Affected rows: 1
+[2025-12-15 07:08:21] ✅ UPDATE berhasil dieksekusi
+[2025-12-15 07:08:21] ======== VERIFIKASI UPDATE ========
+[2025-12-15 07:08:21] Data SETELAH UPDATE:
+[2025-12-15 07:08:21]   ID: 11
+[2025-12-15 07:08:21]   Nama: ganci smekda
+[2025-12-15 07:08:21]   Stok: 20
+[2025-12-15 07:08:21]   Terjual: 3 (sebelum: 2)
+[2025-12-15 07:08:21]   Stok Tersedia: 17
+[2025-12-15 07:08:21] PERBANDINGAN:
+[2025-12-15 07:08:21]   Expected terjual: 3
+[2025-12-15 07:08:21]   Actual terjual: 3
+[2025-12-15 07:08:21]   Match: YES ✅
+[2025-12-15 07:08:21] ✅✅✅ VERIFIKASI SUKSES! ✅✅✅
+[2025-12-15 07:08:21] 🔒 COMMIT TRANSACTION...
+[2025-12-15 07:08:21] ✅✅✅ TRANSACTION COMMITTED SUCCESSFULLY! ✅✅✅
+[2025-12-15 07:08:21] ==========================================
+[2025-12-15 07:08:21] Redirect ke payment.php
